@@ -21,6 +21,7 @@ class PropertyOffer(models.Model):
                 rec.name = False
 
     partner_id = fields.Many2one("res.partner", string="Customer")  # partner oluşturacak mıyız???
+    partner_email = fields.Char(string="Customer Email", related="partner_id.email")
     property_id = fields.Many2one("estate.property", string="Property")
 
     name = fields.Char(string="Description", compute="")

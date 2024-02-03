@@ -3,6 +3,7 @@ from odoo import models, fields, api, _
 
 class Property(models.Model):
     _name = 'estate.property' #securityde ki estate_property bu, model aramada bunu yaz
+    _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = 'Estate Properties'
 
     # bir mülkün bir türü olur (apartman, villa), bir tür bir sürü mülkte olabilir (5-6 apartman olabilir mülklerin arasında)
@@ -30,7 +31,7 @@ class Property(models.Model):
         default="new"
     )
     description = fields.Char(string="Description")
-    postcode = fields.Char(string="Postcode")
+    postcode = fields.Char(string="Postcode", tracking=True)
     date_availability = fields.Date(string="Availability Form")
     expected_price = fields.Float(string="Expected Price")
     best_offer = fields.Float(string="Best Offer", compute="_compute_best_offer")
@@ -119,6 +120,29 @@ class Property(models.Model):
     def _get_report_base_filename(self):
         self.ensure_one() # ???
         return "Estate Property - %s" % self.name
+
+    def action_send_email(self):
+        mail_template = self.env.ref("deneme_ads.offer_mail_template") # recordun id si bu, ona eriştik
+        mail_template.send_mail(self.id, force_send=True)
+
+    def _get_emails(self): # bununla gönderilecek mailleri aldık ve virgül ile listeledik. Çünkü, istenilen format bu
+        emails = ",".join(self.property_offer_ids.mapped("partner_email"))
+        print(emails)
+        return emails
+
+    def _get_sender_email(self):
+        e = self.env.user["email"]
+        print(e)
+        return e
+
+    def _get_buyer_name(self):
+        name = "kimse"
+        print("a")
+        for offer in self.property_offer_ids:
+            if offer["status"] == "accepted":
+                name = offer["partner_id"]["name"]
+        print(name)
+        return name
 
 
 class PropertyType(models.Model):

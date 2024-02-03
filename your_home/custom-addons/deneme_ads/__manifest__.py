@@ -4,7 +4,7 @@
     'category': 'Your Category',
     'summary': 'Eminin öğrenme modülüdür',
     'author': 'Muhammed Emin Bardakcı',
-    'depends': ["base"],
+    'depends': ["base", "mail"],
     'data': [
         # Security Files
         'security/ir.model.access.csv',
@@ -25,6 +25,7 @@
         
         # Data Files
         "data/property_type.xml",
+        "data/mail_template.xml",
 
         # Report
         "report/report_template.xml",

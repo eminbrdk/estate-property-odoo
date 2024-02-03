@@ -1,0 +1,30 @@
+<odoo>
+    <data>
+
+        <!-- userlar sadece kendi yarattıkları mülkleri görebilecek -->
+        <!-- sil, yarat, değiştir, oku özelliklerinide ayarladık -->
+        <record id="property_rule_for_user" model="ir.rule">
+            <field name="name">Property Rule for User</field>
+            <field name="model_id" ref="deneme_ads.model_estate_property"/>
+            <field name="domain_force">[('sales_id', '=', user.id)]</field> <!-- kısıt burada -->
+            <field name="groups" eval="[(4, ref('deneme_ads.group_property_user'))]"/>
+            <field name="perm_unlink" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_create" eval="False"/>
+        </record>
+
+        <!-- managerlar her mülkü görebilecek -->
+        <!-- sil, yarat, değiştir, oku özelliklerinide ayarladık -->
+        <record id="property_rule_for_manager" model="ir.rule">
+            <field name="name">Property Rule for Manager</field>
+            <field name="model_id" ref="deneme_ads.model_estate_property"/>
+            <field name="domain_force">[(1, '=', 1)]</field> <!-- kısıt burada -->
+            <field name="groups" eval="[(4, ref('deneme_ads.group_property_manager'))]"/>
+            <field name="perm_unlink" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_create" eval="True"/>
+        </record>
+    </data>
+</odoo>

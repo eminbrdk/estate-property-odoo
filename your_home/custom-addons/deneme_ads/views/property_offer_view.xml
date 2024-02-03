@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+
+        <!-- Ana ekranda gözükecekler -->
+        <record id="estate_property_offer_tree_view" model="ir.ui.view">
+            <field name="name">estate.property.offer.tree</field>
+            <field name="model">estate.property.offer</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="price"/>
+                    <field name="status"/>
+                    <field name="partner_id"/>
+                    <field name="property_id"/>
+                    <field name="validity"/>
+                    <field name="deadline"/>
+                    <field name="creation_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- gantt ücretsiz versiyonu kullandığımızdan gözükmüyor
+        <record id="estate_property_offer_gantt_view" model="ir.ui.view">
+            <field name="name">estate.property.offer.gantt</field>
+            <field name="model">estate.property.offer</field>
+            <field name="arch" type="xml">
+                <gant date_start="creation_date" date_stop="deadline" default_group_by="partner_id"/>
+            </field>
+        </record> -->
+
+        <!-- arama butonuna fieldlar ekledik ki price ve stat gibilerin üzerindede arama yapabilesin -->
+        <record id="estate_property_offer_search_view" model="ir.ui.view">
+            <field name="name">estate.property.offer.search</field>
+            <field name="model">estate.property.offer</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="price"/>
+                    <field name="status"/>
+                    <field name="partner_id"/>
+                    <field name="property_id"/>
+                    <!-- filter ile filtrelere kısa yol ekliyoruz -->
+                    <!-- <separatoe/> ile filtreleri çizgi ile ayırabilirsin -->
+                    <filter string="Accepted" name="accept_state" domain="[('status', '=', 'accepted')]"/>
+                    <group expand="0" string="Group By">
+                        <filter string="State" name="state_group" context="{'group_by': 'status'}"/>
+                    </group>
+                    <searchpanel>
+                        <field name="status" string="FILTRELE" icon="fa-filter" groupby="state_group" limit="0"/>
+                    </searchpanel>
+                </search>
+            </field>
+        </record>
+
+        <!-- new'e tıklandığında çıkan ekran -->
+        <record id="estate_property_offer_form_view" model="ir.ui.view">
+            <field name="name">estate.property.offer.form</field>
+            <field name="model">estate.property.offer</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="price"/>
+                                <field name="status"/>
+                                <field name="partner_id"/>
+                                <field name="property_id"/>
+                            </group>
+                            <group>
+                                <field name="validity"/>
+                                <field name="deadline"/>
+                                <field name="creation_date"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- tıklandığında bu ekrana gelmemiz için yazılan kod -->
+        <record id="action_property_offer"
+                model="ir.actions.act_window"> <!-- action_property ile menu_itemda tıklama ile butaya geldik -->
+            <field name="name">Property Offer</field>
+            <field name="res_model">estate.property.offer</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="estate_property_offer_tree_view"/> <!-- ana ekranının id'si -->
+        </record>
+
+    </data>
+</odoo>

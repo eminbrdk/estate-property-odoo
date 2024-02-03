@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+
+        <!-- offer_count için action yapıyoruz galiba -->
+        <record id="action_property_view_offer"
+                model="ir.actions.act_window"> <!-- action_property ile menu_itemda tıklama ile butaya geldik -->
+            <field name="name">Property Offers for one property</field>
+            <field name="res_model">estate.property.offer</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[("property_id", "=", active_id)]</field> <!-- domain ile filtreleme yaptık -->
+        </record>
+
+        <!-- kanban -->
+        <record id="estate_property_kanban_view" model="ir.ui.view">
+            <field name="name">estate.property.kanban</field>
+            <field name="model">estate.property</field>
+            <field name="arch" type="xml">
+                <kanban default_group_by="state">
+                    <field name="name"/>
+                    <field name="state"/>
+                    <field name="postcode"/>
+                    <field name="buyer_id"/>
+                    <templates>
+                        <t t-name="kanban-box"> <!-- kutu yaptı -->
+                            <div class="oe_kanban_global_click"> <!-- tıklanabilir yaptı -->
+                                <div class="oe_kanban_details">
+                                    <strong class="o_kanban_record_title">
+                                        <field name="name"/>
+                                    </strong>
+                                    <div class="o_kanban_taggggggs_section">
+                                        <field name="property_tag_ids" widget="many2many_tags"
+                                               options="{'color_field': 'color'}"/>
+                                    </div>
+                                    <div>
+                                        There is
+                                        <field name="offer_count"/>
+                                        offer
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <!-- pivot -->
+        <record id="estate_property_pivot_view" model="ir.ui.view">
+            <field name="name">estate.property.pivot</field>
+            <field name="model">estate.property</field>
+            <field name="arch" type="xml">
+                <pivot>
+                    <field name="name" type="row"/>
+                    <field name="expected_price" type="measure"/>
+                    <field name="facades" type="measure"/>
+                    <field name="bedrooms" type="measure"/>
+                    <field name="state" type="col"/>
+                </pivot>
+            </field>
+        </record>
+
+        <!-- graph -->
+        <record id="estate_property_graph_view" model="ir.ui.view">
+            <field name="name">estate.property.graph</field>
+            <field name="model">estate.property</field>
+            <field name="arch" type="xml">
+                <graph>
+                    <field name="name"/>
+                    <field name="selling_price" type="measure"/>
+                </graph>
+            </field>
+        </record>
+
+        <!-- calendar -->
+        <record id="estate_property_calendar_view" model="ir.ui.view">
+            <field name="name">estate.property.calendar</field>
+            <field name="model">estate.property</field>
+            <field name="arch" type="xml">
+                <calendar date_start="date_availability" string="Properties" mode="month">
+                    <field name="name"/>
+                    <field name="date_availability"/>
+                    <field name="postcode"/>
+                </calendar>
+            </field>
+        </record>
+
+        <!-- Ana ekranda gözükecekler -->
+        <record id="estate_property_tree_view" model="ir.ui.view">
+            <field name="name">estate.property.tree</field>
+            <field name="model">estate.property</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="property_type_id"/>
+                    <field name="postcode"/>
+                    <field name="date_availability"/>
+                    <field name="expected_price"/>
+                    <field name="best_offer"/>
+                    <field name="selling_price"/>
+                    <field name="state" widget="badge"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- new'e basıldığında gelen ekran -->
+        <record id="estate_property_form_view" model="ir.ui.view">
+            <field name="name">estate.property.form</field>
+            <field name="model">estate.property</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header> <!-- butonları en başdaki headera ekledik -->
+                        <button name="sold_pressed" type="object" string="Sold" class="btn btn-primary"/>
+                        <button name="cancel_pressed" type="object" string="Cancel" class="btn btn-danger"/>
+                        <field name="state"
+                               widget="statusbar"/> <!-- statusbar_visible="new, received, " bunla gösterilecekleri sınırlayabilirsin -->
+                    </header>
+                    <sheet> <!-- içeriklerin bulunduğu kare -->
+                        <div class="oe_button_box" name="button_box">
+                            <!-- action belirledik ve yukarda buna record ile görev atadık -->
+                            <button class="oe_stat_button" name="%(deneme_ads.action_property_view_offer)d"
+                                    type="action" icon="fa-handshake-o">
+                                <!-- offers_count gösterielcek, offers yazacak başta -->
+                                <field name="offer_count" string="offers" widget="statinfo"/>
+                            </button>
+                            <!-- client action -->
+                            <button class="oe_stat_button" name="action_client_action" type="object" icon="fa-handshake-o">
+                                <field name="offer_count" string="Testing Client" widget="statinfo"/>
+                            </button>
+                            <!-- url action -->
+                            <button class="oe_stat_button" name="action_url_action" type="object" icon="fa-handshake-o">
+                                <field name="offer_count" string="eminin insta" widget="statinfo"/>
+                            </button>
+                        </div>
+                        <group>
+                            <field name="name" widget="char_emoji" placeholder="Property Name"/>
+                            <field name="property_tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                            <group>
+                                <group> <!-- yatay ayırdı column -->
+                                    <field name="property_type_id"/>
+                                    <field name="postcode" password="True"/>
+                                    <field name="date_availability"/>
+                                </group>
+                                <group> <!-- yatay ayırdı column -->
+                                    <field name="expected_price" groups="deneme_ads.group_property_manager"/>
+                                    <field name="best_offer"/>
+                                    <field name="selling_price"/>
+                                </group>
+                            </group>
+                        </group>
+                        <notebook> <!-- sayfalara ayırdık -->
+                            <page string="Description">
+                                <group> <!-- group içine alarak yatay sıralaman dikeye soktuk -->
+                                    <field name="description"/>
+                                    <field name="bedrooms"/>
+                                    <field name="living_area"/>
+                                    <field name="facades"/>
+                                    <field name="garage" widget="boolean_toggle"/>
+                                    <field name="garden"/>
+                                    <!-- !!!!çokomelli garden varsa bunları göster yoksa gizle yaptık -->
+                                    <field name="garden_area" invisible="garden == False"/>
+                                    <field name="garden_orientation" invisible="garden == False" widget="selection_badge"/>
+                                    <field name="total_area"/>
+                                </group>
+                            </page>
+                            <page string="Offers">
+                                <field name="property_offer_ids">
+                                    <tree editable="bottom" decoration-success="status == 'accepted'"
+                                          decoration-danger="status == 'refused'">
+                                        <field name="price"/>
+                                        <field name="partner_id"/>
+                                        <field name="creation_date"/>
+                                        <field name="validity"/>
+                                        <field name="deadline" widget="remaining_days"/>
+                                        <field name="status"
+                                               readonly="1"/> <!-- değişiklik yapmıyorsun sadece okuyorsun -->
+                                        <button type="object" icon="fa-check" name="action_accept_offer"
+                                                class="btn btn-primary" string="Accept"/>
+                                        <button type="object" icon="fa-times" name="action_refuse_offer"
+                                                class="btn btn-primary" string="Decline"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Other Info">
+                                <group>
+                                    <field name="sales_id" widget="many2one_avatar_user"/>
+                                    <field name="buyer_id"/>
+                                    <field name="phone" widget="phone"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- tıklandığında bu ekrana gelmemiz için yazılan kod -->
+        <record id="action_property"
+                model="ir.actions.act_window"> <!-- action_property ile menu_itemda tıklama ile butaya geldik -->
+            <field name="name">Property</field>
+            <field name="res_model">estate.property</field>
+            <field name="view_mode">kanban,graph,calendar,pivot,tree,form</field> <!-- hangisini öne koyarsan onla başlarsın -->
+            <field name="view_id"
+                   ref="estate_property_tree_view"/> <!-- ana ekranının id'si -->
+            <field name="help" type="html">
+                <p>
+                    Create a Property to Advertise
+                </p>
+            </field>
+        </record>
+
+
+        <!-- client action -->
+         <record id="action_action_tc" model="ir.actions.client">
+            <field name="name">Custom Client Action</field>
+            <field name="tag">custom_client_action_tag</field>
+        </record>
+
+        <!-- server sction -->
+        <record id="action_extend_offer_deadline" model="ir.actions.server">
+            <field name="name">Extend Deadline</field>
+            <field name="model_id" ref="deneme_ads.model_estate_property_offer"/>
+            <field name="state">code</field> <!-- hangisini öne koyarsan onla başlarsın -->
+            <field name="binding_model_id" ref="deneme_ads.model_estate_property_offer"/>
+            <field name="binding_view_types">list,form</field>
+            <field name="code">
+                action = model.extend_offer_deadline()
+            </field>
+        </record>
+
+        <!-- Scheduled Action -->
+        <record id="ir_cron_extend_deadline" model="ir.cron">
+            <field name="name">Offers: Extend Deadline everyday</field>
+            <field name="model_id" ref="deneme_ads.model_estate_property_offer"/>
+            <field name="state">code</field>
+            <field name="code">model.extend_offer_deadline2()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field> <!-- günde 1 defa -->
+            <field name="numbercall">-1</field>
+        </record>
+
+    </data>
+</odoo>

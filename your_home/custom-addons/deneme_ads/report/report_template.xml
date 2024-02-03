@@ -1,0 +1,84 @@
+<odoo>
+    <data>
+        <template id="report_estate_property_document">
+            <t t-call="web.external_layout">
+                <div class="mt-5">
+                    <div class="page">
+
+                        <h2>
+                            <span t-field="o.name"></span>
+                        </h2>
+
+                        <div id="informations" class="row mt-4 mb-4">
+                            <div class="col-auto col-3">
+                                <strong>Type</strong>
+                                <p class="m-0" t-field="o.property_type_id"/>
+                            </div>
+                            <div class="col-auto col-3">
+                                <strong>Postcode</strong>
+                                <p class="m-0" t-field="o.postcode"/>
+                            </div>
+                            <div class="col-auto col-3">
+                                <strong>Date Availability</strong>
+                                <p class="m-0" t-field="o.date_availability"/>
+                            </div>
+                        </div>
+
+                        <div id="informations2" class="row mt-4 mb-4">
+                            <div class="col-auto col-3">
+                                <strong>Type</strong>
+                                <p class="m-0" t-field="o.property_type_id"/>
+                            </div>
+                            <div class="col-auto col-3">
+                                <strong>Postcode</strong>
+                                <p class="m-0" t-field="o.postcode"/>
+                            </div>
+                            <div class="col-auto col-3">
+                                <strong>Date Availability</strong>
+                                <p class="m-0" t-field="o.date_availability"/>
+                            </div>
+                        </div>
+
+                        <table class="table table-sm table-borderless">
+                            <thead>
+                                <tr>
+                                    <th>Customer</th>
+                                    <th>Price</th>
+                                    <th>Validity</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="o.property_offer_ids" t-as="offer">
+                                    <tr>
+                                        <td>
+                                            <span t-field="offer.partner_id"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="offer.price"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="offer.validity"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="offer.status"/>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </t>
+        </template>
+
+        <template id="report_estate_property">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o"> <!-- burada for loopa aldık ve verileri o yaptık cart curt -->
+                    <t t-call="deneme_ads.report_estate_property_document"/>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

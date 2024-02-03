@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <menuitem name="Property Ads" id="menu_root_property_ads" web_icon="deneme_ads,static/description/icon.png">
+        <menuitem id="menu_property_ads" name="Ads">
+            <menuitem id="menu_property" name="Property" action="deneme_ads.action_property"/>
+        </menuitem>
+        <menuitem id="menu_property_ads_settings" name="Settings">
+            <menuitem id="menu_property_type" name="Property Types" action="deneme_ads.action_property_type"/>
+            <menuitem id="menu_property_tag" name="Property Tags" action="deneme_ads.action_property_tag" groups="deneme_ads.group_property_manager"/> <!-- sadece amangerlara gözüksün diye ayarladım -->
+            <menuitem id="menu_property_offer" name="Property Offers" action="deneme_ads.action_property_offer"/>
+            <menuitem id="menu_test_client" name="Client Test" action="deneme_ads.action_action_tc"/>
+        </menuitem>
+    </menuitem>
+</odoo>

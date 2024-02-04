@@ -25,7 +25,7 @@ class PropertyOffer(models.Model):
     property_id = fields.Many2one("estate.property", string="Property")
 
     name = fields.Char(string="Description", compute="")
-    price = fields.Float(string="Price")
+    price = fields.Monetary(string="Price")
     status = fields.Selection(
         [("accepted", "Accepted"), ("refused", "Refused")],
         string="Status"
@@ -35,6 +35,8 @@ class PropertyOffer(models.Model):
     # inverse ile deadline değiştiğinde değişiklik yapıyor ama kaydedince gösteriyor
     deadline = fields.Date(string="Deadline")#, compute="_compute_deadline", inverse="_inverse_deadline")
     creation_date = fields.Date(string="Creation Date")#, default=_set_create_data)
+    currency_id = fields.Many2one("res.currency", string="Currency",
+                                  default=lambda self: self.env.user.company_id.currency_id)
 
 
     #@api.depends("creation_date", "validity") # bu ikisinden birinde değişiklik oldumu hesaplamayı yapıyor ve gösteriyor

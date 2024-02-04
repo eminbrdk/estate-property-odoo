@@ -6,7 +6,7 @@
     'author': 'Muhammed Emin Bardakcı',
     'depends': ["deneme_ads", "base"],
     'data': [
-
+        "views/res_users.xml",
     ],
     'installable': True,
     'license': 'LGPL-3',

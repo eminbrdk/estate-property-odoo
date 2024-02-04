@@ -33,9 +33,11 @@ class Property(models.Model):
     description = fields.Char(string="Description")
     postcode = fields.Char(string="Postcode", tracking=True)
     date_availability = fields.Date(string="Availability Form")
-    expected_price = fields.Float(string="Expected Price")
-    best_offer = fields.Float(string="Best Offer", compute="_compute_best_offer")
-    selling_price = fields.Float(string="Selling Price", compute="_compute_selling_price")
+    # monetary currencyler için kullanılıyor
+    expected_price = fields.Monetary(string="Expected Price")
+    best_offer = fields.Monetary(string="Best Offer", compute="_compute_best_offer")
+    selling_price = fields.Monetary(string="Selling Price", compute="_compute_selling_price")
+
     bedrooms = fields.Integer(string="Bedrooms")
     living_area = fields.Integer(string="Living Area(sqm)")
     facades = fields.Integer(string="Facades")
@@ -49,6 +51,7 @@ class Property(models.Model):
     )
     # related ile buyer seçildiğinde phone da gösterilecek
     phone = fields.Char(string="Phone", related="buyer_id.phone")
+    currency_id = fields.Many2one("res.currency", string="Currency", default=lambda self: self.env.user.company_id.currency_id)
 
     @api.onchange("living_area", "garden_area")
     def _onchange_total_area(self): #bu fonksiyonun çağırlmadan önce belirtilmesi lazım yani yukarda

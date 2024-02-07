@@ -19,11 +19,11 @@
                                 <th><span t-esc="tag.color"/></th>
                             </tr>
                         </t>
-                        <t t-if="property_ids > 1">
+                        <!-- <t t-if="property_ids>1">
                             <p>Hello World</p>
-                        </t>
-                        <p t-if="1<2">a</p>
-                        <p t-elif="2<3">a</p>
+                        </t> -->
+                        <p t-if="1>2">a</p>
+                        <p t-elif="2>3">a</p>
                         <p t-else="">a</p>
                         <t t-set="bar" t-value="200"/>
                         <t t-out="bar"/>

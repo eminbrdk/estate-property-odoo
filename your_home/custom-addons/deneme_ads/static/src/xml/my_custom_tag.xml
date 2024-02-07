@@ -1,3 +1,4 @@
+<!--
 <templates>
     <t t-name="qmk" t-inherit="web.property_list" t-inherit-mode="primary">
         <div>
@@ -8,5 +9,16 @@
         <xpath expr="//table" position="attributes">
             <attribute name="widget">badge</attribute>
         </xpath>
+    </t>
+</templates>
+-->
+
+<templates>
+    <t t-name="qmk">
+        <div>
+            <h3>
+                Custom Action
+            </h3>
+        </div>
     </t>
 </templates>

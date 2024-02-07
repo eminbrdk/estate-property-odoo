@@ -1,0 +1,528 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* deneme_ads
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-02-03 12:53+0000\n"
+"PO-Revision-Date: 2024-02-03 12:53+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: deneme_ads
+#: model:ir.model.fields.selection,name:deneme_ads.selection__estate_property__state__accepted
+msgid " Offer Accepted"
+msgstr ""
+
+#. module: deneme_ads
+#: model:ir.model.fields.selection,name:deneme_ads.selection__estate_property__state__received
+msgid " Offer Received"
+msgstr ""
+
+#. module: deneme_ads
+#: model:ir.actions.report,print_report_name:deneme_ads.property_report_action
+msgid "(object._get_report_base_filename())"
+msgstr ""
+
+#. module: deneme_ads
+#: model_terms:ir.ui.view,arch_db:deneme_ads.report_estate_property_document
+msgid "<strong>Date Availability</strong>"
+msgstr ""
+
+#. module: deneme_ads
+#: model_terms:ir.ui.view,arch_db:deneme_ads.report_estate_property_document
+msgid "<strong>Postcode</strong>"
+msgstr ""
+
+#. module: deneme_ads
+#: model_terms:ir.ui.view,arch_db:deneme_ads.report_estate_property_document
+msgid "<strong>Type</strong>"
+msgstr ""
+
+#. module: deneme_ads
+#: model_terms:ir.ui.view,arch_db:deneme_ads.estate_property_form_view
+msgid "Accept"
+msgstr ""
+
+#. module: deneme_ads
+#: model:ir.model.fields.selection,name:deneme_ads.selection__estate_property_offer__status__accepted
+#: model_terms:ir.ui.view,arch_db:deneme_ads.estate_property_offer_search_view
+msgid "Accepted"
+msgstr ""
+
+#. module: deneme_ads
+#: model:ir.ui.menu,name:deneme_ads.menu_property_ads
+msgid "Ads"
+msgstr ""
+
+#. module: deneme_ads
+#: model:ir.model.fields,field_description:deneme_ads.field_estate_property__date_availability
+msgid "Availability Form"
+msgstr ""
+
+#. module: deneme_ads
+#: model_terms:ir.ui.view,arch_db:deneme_ads.property_list
+msgid "Available Properties"
+msgstr ""
+
+#. module: deneme_ads
+#: model:ir.model.fields,field_description:deneme_ads.field_estate_property__bedrooms
+msgid "Bedrooms"
+msgstr ""
+
+#. module: deneme_ads
+#: model:ir.model.fields,field_description:deneme_ads.field_estate_property__best_offer
+msgid "Best Offer"
+msgstr ""
+
+#. module: deneme_ads
+#: model:ir.model.fields,field_description:deneme_ads.field_estate_property__buyer_id
+msgid "Buyer"
+msgstr ""
+
+#. module: deneme_ads
+#: model_terms:ir.ui.view,arch_db:deneme_ads.estate_property_form_view
+msgid "Cancel"
+msgstr ""
+
+#. module: deneme_ads
+#: model:ir.model.fields.selection,name:deneme_ads.selection__estate_property__state__cancelled
+msgid "Cancelled"
+msgstr ""
+
+#. module: deneme_ads
+#: model:ir.ui.menu,name:deneme_ads.menu_test_client
+msgid "Client Test"
+msgstr ""
+
+#. module: deneme_ads
+#: model:ir.model.fields,field_description:deneme_ads.field_estate_property_tag__color
+msgid "Color"
+msgstr ""
+
+#. module: deneme_ads
+#: model_terms:ir.ui.view,arch_db:deneme_ads.property_form
+msgid "Create New Property Tag"
+msgstr "yeni mülk etiketi oluştur"
+
+#. module: deneme_ads
+#: model_terms:ir.ui.view,arch_db:deneme_ads.property_form
+msgid "Create Tag"
+msgstr ""
+
+#. module: deneme_ads
+#: model_terms:ir.actions.act_window,help:deneme_ads.action_property
+#: model_terms:ir.actions.act_window,help:deneme_ads.action_property_type
+msgid "Create a Property to Advertise"
+msgstr "reklam için mülk oluştur"
+
+#. module: deneme_ads
+#: model:ir.model.fields,field_description:deneme_ads.field_estate_property__create_uid
+#: model:ir.model.fields,field_description:deneme_ads.field_estate_property_offer__create_uid
+#: model:ir.model.fields,field_description:deneme_ads.field_estate_property_tag__create_uid
+#: model:ir.model.fields,field_description:deneme_ads.field_estate_property_type__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: deneme_ads
+#: model:ir.model.fields,field_description:deneme_ads.field_estate_property__create_date
+#: model:ir.model.fields,field_description:deneme_ads.field_estate_property_offer__create_date
+#: model:ir.model.fields,field_description:deneme_ads.field_estate_property_tag__create_date
+#: model:ir.model.fields,field_description:deneme_ads.field_estate_property_type__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: deneme_ads
+#: model:ir.model.fields,field_description:deneme_ads.field_estate_property_offer__creation_date
+msgid "Creation Date"
+msgstr ""
+
+#. module: deneme_ads
+#. odoo-javascript
+#: code:addons/deneme_ads/static/src/xml/my_custom_tag.xml:0
+#, python-format
+msgid "Custom Action"
+msgstr ""
+
+#. module: deneme_ads
+#: model:ir.actions.client,name:deneme_ads.action_action_tc
+msgid "Custom Client Action"
+msgstr ""
+
+#. module: deneme_ads
+#: model:ir.model.fields,field_description:deneme_ads.field_estate_property_offer__partner_id
+#: model_terms:ir.ui.view,arch_db:deneme_ads.report_estate_property_document
+msgid "Customer"
+msgstr ""
+
+#. module: deneme_ads
+#: model:ir.model.fields,field_description:deneme_ads.field_estate_property_offer__deadline
+msgid "Deadline"
+msgstr ""
+
+#. module: deneme_ads
+#: model_terms:ir.ui.view,arch_db:deneme_ads.estate_property_form_view
+msgid "Decline"
+msgstr ""
+
+#. module: deneme_ads
+#: model:ir.model.fields,field_description:deneme_ads.field_estate_property__description
+#: model:ir.model.fields,field_description:deneme_ads.field_estate_property_offer__name
+#: model_terms:ir.ui.view,arch_db:deneme_ads.estate_property_form_view
+msgid "Description"
+msgstr ""
+
+#. module: deneme_ads
+#: model:ir.model.fields,field_description:deneme_ads.field_estate_property__display_name
+#: model:ir.model.fields,field_description:deneme_ads.field_estate_property_offer__display_name
+#: model:ir.model.fields,field_description:deneme_ads.field_estate_property_tag__display_name
+#: model:ir.model.fields,field_description:deneme_ads.field_estate_property_type__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: deneme_ads
+#: model:ir.model.fields.selection,name:deneme_ads.selection__estate_property__garden_orientation__east
+msgid "East"
+msgstr ""
+
+#. module: deneme_ads
+#: model:ir.model,name:deneme_ads.model_estate_property
+msgid "Estate Properties"
+msgstr ""
+
+#. module: deneme_ads
+#: model:ir.model,name:deneme_ads.model_estate_property_offer
+msgid "Estate Property Offers"
+msgstr "Mülk teklifleri"
+
+#. module: deneme_ads
+#: model:ir.model,name:deneme_ads.model_estate_property_tag
+msgid "Estate Property Tag"
+msgstr "mülk etiketleri"
+
+#. module: deneme_ads
+#: model:ir.model,name:deneme_ads.model_estate_property_type
+msgid "Estate Property Types"
+msgstr "mülk tipleri"
+
+#. module: deneme_ads
+#: model:ir.model.fields,field_description:deneme_ads.field_estate_property__expected_price
+msgid "Expected Price"
+msgstr ""
+
+#. module: deneme_ads
+#: model:ir.actions.server,name:deneme_ads.action_extend_offer_deadline
+msgid "Extend Deadline"
+msgstr ""
+
+#. module: deneme_ads
+#: model_terms:ir.ui.view,arch_db:deneme_ads.estate_property_offer_search_view
+msgid "FILTRELE"
+msgstr ""
+
+#. module: deneme_ads
+#: model:ir.model.fields,field_description:deneme_ads.field_estate_property__facades
+msgid "Facades"
+msgstr ""
+
+#. module: deneme_ads
+#: model:ir.model.fields,field_description:deneme_ads.field_estate_property__garage
+msgid "Garage"
+msgstr ""
+
+#. module: deneme_ads
+#: model:ir.model.fields,field_description:deneme_ads.field_estate_property__garden
+msgid "Garden"
+msgstr ""
+
+#. module: deneme_ads
+#: model:ir.model.fields,field_description:deneme_ads.field_estate_property__garden_area
+msgid "Garden Area"
+msgstr ""
+
+#. module: deneme_ads
+#: model:ir.model.fields,field_description:deneme_ads.field_estate_property__garden_orientation
+msgid "Garden Orientation"
+msgstr ""
+
+#. module: deneme_ads
+#: model_terms:ir.ui.view,arch_db:deneme_ads.estate_property_offer_search_view
+msgid "Group By"
+msgstr ""
+
+#. module: deneme_ads
+#: model:ir.module.category,description:deneme_ads.module_category_real_estate
+msgid "Helps you handle properties and offers"
+msgstr ""
+
+#. module: deneme_ads
+#: model:ir.model.fields,field_description:deneme_ads.field_estate_property__id
+#: model:ir.model.fields,field_description:deneme_ads.field_estate_property_offer__id
+#: model:ir.model.fields,field_description:deneme_ads.field_estate_property_tag__id
+#: model:ir.model.fields,field_description:deneme_ads.field_estate_property_type__id
+msgid "ID"
+msgstr ""
+
+#. module: deneme_ads
+#: model:ir.model.fields,field_description:deneme_ads.field_estate_property__write_uid
+#: model:ir.model.fields,field_description:deneme_ads.field_estate_property_offer__write_uid
+#: model:ir.model.fields,field_description:deneme_ads.field_estate_property_tag__write_uid
+#: model:ir.model.fields,field_description:deneme_ads.field_estate_property_type__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: deneme_ads
+#: model:ir.model.fields,field_description:deneme_ads.field_estate_property__write_date
+#: model:ir.model.fields,field_description:deneme_ads.field_estate_property_offer__write_date
+#: model:ir.model.fields,field_description:deneme_ads.field_estate_property_tag__write_date
+#: model:ir.model.fields,field_description:deneme_ads.field_estate_property_type__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: deneme_ads
+#: model:ir.model.fields,field_description:deneme_ads.field_estate_property__living_area
+msgid "Living Area(sqm)"
+msgstr ""
+
+#. module: deneme_ads
+#: model:res.groups,name:deneme_ads.group_property_manager
+msgid "Manager: Manage all property"
+msgstr ""
+
+#. module: deneme_ads
+#: model:ir.model.fields,field_description:deneme_ads.field_estate_property__name
+#: model:ir.model.fields,field_description:deneme_ads.field_estate_property_tag__name
+#: model:ir.model.fields,field_description:deneme_ads.field_estate_property_type__name
+msgid "Name"
+msgstr ""
+
+#. module: deneme_ads
+#: model:ir.model.fields.selection,name:deneme_ads.selection__estate_property__state__new
+msgid "New"
+msgstr ""
+
+#. module: deneme_ads
+#: model:ir.model.fields.selection,name:deneme_ads.selection__estate_property__garden_orientation__north
+msgid "North"
+msgstr ""
+
+#. module: deneme_ads
+#: model:ir.model.fields,field_description:deneme_ads.field_estate_property__offer_count
+msgid "Offer Count"
+msgstr ""
+
+#. module: deneme_ads
+#: model_terms:ir.ui.view,arch_db:deneme_ads.estate_property_form_view
+msgid "Offers"
+msgstr ""
+
+#. module: deneme_ads
+#: model:ir.actions.server,name:deneme_ads.ir_cron_extend_deadline_ir_actions_server
+msgid "Offers: Extend Deadline everyday"
+msgstr ""
+
+#. module: deneme_ads
+#: model_terms:ir.ui.view,arch_db:deneme_ads.estate_property_form_view
+msgid "Other Info"
+msgstr ""
+
+#. module: deneme_ads
+#: model:ir.model.fields,field_description:deneme_ads.field_estate_property__phone
+msgid "Phone"
+msgstr ""
+
+#. module: deneme_ads
+#: model:ir.model.fields,field_description:deneme_ads.field_estate_property__postcode
+msgid "Postcode"
+msgstr ""
+
+#. module: deneme_ads
+#: model:ir.model.fields,field_description:deneme_ads.field_estate_property_offer__price
+#: model_terms:ir.ui.view,arch_db:deneme_ads.report_estate_property_document
+msgid "Price"
+msgstr ""
+
+#. module: deneme_ads
+#: model_terms:ir.ui.view,arch_db:deneme_ads.estate_property_calendar_view
+msgid "Properties"
+msgstr ""
+
+#. module: deneme_ads
+#: model:ir.actions.act_window,name:deneme_ads.action_property
+#: model:ir.model.fields,field_description:deneme_ads.field_estate_property_offer__property_id
+#: model:ir.ui.menu,name:deneme_ads.menu_property
+msgid "Property"
+msgstr ""
+
+#. module: deneme_ads
+#: model:ir.ui.menu,name:deneme_ads.menu_root_property_ads
+msgid "Property Ads"
+msgstr "Mülk Reklamı"
+
+#. module: deneme_ads
+#: model_terms:ir.ui.view,arch_db:deneme_ads.estate_property_form_view
+msgid "Property Name"
+msgstr "Mülk İsmmi"
+
+#. module: deneme_ads
+#: model:ir.actions.act_window,name:deneme_ads.action_property_offer
+msgid "Property Offer"
+msgstr "Mülke gelen teklifler"
+
+#. module: deneme_ads
+#: model:ir.model.fields,field_description:deneme_ads.field_estate_property__property_offer_ids
+#: model:ir.ui.menu,name:deneme_ads.menu_property_offer
+msgid "Property Offers"
+msgstr "Mülke gelen teklifler"
+
+#. module: deneme_ads
+#: model:ir.actions.act_window,name:deneme_ads.action_property_view_offer
+msgid "Property Offers for one property"
+msgstr "1 mülke gelen tkelifler"
+
+#. module: deneme_ads
+#: model:ir.actions.report,name:deneme_ads.property_report_action
+msgid "Property Report Action"
+msgstr "Mülk raparu"
+
+#. module: deneme_ads
+#: model:ir.actions.act_window,name:deneme_ads.action_property_tag
+msgid "Property Tag"
+msgstr "Mülk etiketi"
+
+#. module: deneme_ads
+#: model:ir.model.fields,field_description:deneme_ads.field_estate_property__property_tag_ids
+#: model:ir.ui.menu,name:deneme_ads.menu_property_tag
+msgid "Property Tags"
+msgstr "Mülk Etiketleri"
+
+#. module: deneme_ads
+#: model:ir.actions.act_window,name:deneme_ads.action_property_type
+#: model:ir.model.fields,field_description:deneme_ads.field_estate_property__property_type_id
+msgid "Property Type"
+msgstr "Mülk Tipi"
+
+#. module: deneme_ads
+#: model:ir.ui.menu,name:deneme_ads.menu_property_type
+msgid "Property Types"
+msgstr "Mülk Tipleri"
+
+#. module: deneme_ads
+#: model:ir.module.category,name:deneme_ads.module_category_real_estate
+msgid "Real Estate"
+msgstr ""
+
+#. module: deneme_ads
+#: model:ir.model.fields.selection,name:deneme_ads.selection__estate_property_offer__status__refused
+msgid "Refused"
+msgstr ""
+
+#. module: deneme_ads
+#: model:ir.model.fields,field_description:deneme_ads.field_estate_property__sales_id
+msgid "Salesman"
+msgstr ""
+
+#. module: deneme_ads
+#: model:ir.model.fields,field_description:deneme_ads.field_estate_property__selling_price
+msgid "Selling Price"
+msgstr ""
+
+#. module: deneme_ads
+#: model:ir.ui.menu,name:deneme_ads.menu_property_ads_settings
+msgid "Settings"
+msgstr ""
+
+#. module: deneme_ads
+#: model:ir.model.fields.selection,name:deneme_ads.selection__estate_property__state__sold
+#: model_terms:ir.ui.view,arch_db:deneme_ads.estate_property_form_view
+msgid "Sold"
+msgstr ""
+
+#. module: deneme_ads
+#: model:ir.model.fields.selection,name:deneme_ads.selection__estate_property__garden_orientation__south
+msgid "South"
+msgstr ""
+
+#. module: deneme_ads
+#: model_terms:ir.ui.view,arch_db:deneme_ads.estate_property_offer_search_view
+msgid "State"
+msgstr ""
+
+#. module: deneme_ads
+#: model:ir.model.fields,field_description:deneme_ads.field_estate_property__state
+#: model:ir.model.fields,field_description:deneme_ads.field_estate_property_offer__status
+#: model_terms:ir.ui.view,arch_db:deneme_ads.report_estate_property_document
+msgid "Status"
+msgstr ""
+
+#. module: deneme_ads
+#: model_terms:ir.ui.view,arch_db:deneme_ads.property_list
+msgid "Tag Color"
+msgstr ""
+
+#. module: deneme_ads
+#: model_terms:ir.ui.view,arch_db:deneme_ads.property_form
+msgid "Tag Color:"
+msgstr ""
+
+#. module: deneme_ads
+#: model_terms:ir.ui.view,arch_db:deneme_ads.property_list
+msgid "Tag Name"
+msgstr ""
+
+#. module: deneme_ads
+#: model_terms:ir.ui.view,arch_db:deneme_ads.property_form
+msgid "Tag Name:"
+msgstr ""
+
+#. module: deneme_ads
+#: model_terms:ir.ui.view,arch_db:deneme_ads.estate_property_form_view
+msgid "Testing Client"
+msgstr ""
+
+#. module: deneme_ads
+#: model_terms:ir.ui.view,arch_db:deneme_ads.estate_property_kanban_view
+msgid "There is"
+msgstr ""
+
+#. module: deneme_ads
+#: model:ir.model.fields,field_description:deneme_ads.field_estate_property__total_area
+msgid "Total Area"
+msgstr ""
+
+#. module: deneme_ads
+#: model:res.groups,name:deneme_ads.group_property_user
+msgid "User: Manage own property"
+msgstr ""
+
+#. module: deneme_ads
+#: model:ir.model.fields,field_description:deneme_ads.field_estate_property_offer__validity
+#: model_terms:ir.ui.view,arch_db:deneme_ads.report_estate_property_document
+msgid "Validity"
+msgstr ""
+
+#. module: deneme_ads
+#: model:ir.model.fields.selection,name:deneme_ads.selection__estate_property__garden_orientation__west
+msgid "West"
+msgstr ""
+
+#. module: deneme_ads
+#: model_terms:ir.ui.view,arch_db:deneme_ads.estate_property_form_view
+msgid "eminin insta"
+msgstr ""
+
+#. module: deneme_ads
+#: model_terms:ir.ui.view,arch_db:deneme_ads.estate_property_kanban_view
+msgid "offer"
+msgstr ""
+
+#. module: deneme_ads
+#: model_terms:ir.ui.view,arch_db:deneme_ads.estate_property_form_view
+msgid "offers"
+msgstr ""
